@@ -21,7 +21,6 @@ window.onload = async () => {
 
   if (!loading) {
     pageloader.style.opacity = "0";
-
     setTimeout(() => {
       pageloader.classList.add("hide--loader");
     }, 300);

@@ -1,11 +1,9 @@
 import arr from "./masonryGridData.js";
-import { initScrollTriggerAnimation } from "../../scripts/animations.js";
 
 const mountMasonryGrid = () => {
   const expandMasonryButton = document.querySelector(
     "#masonry__button--expand"
   );
-  const masonrySection = document.querySelector("#masonry__section");
   const masonryExpandedContent = document.querySelector(
     "#masonry--grid__section"
   );
@@ -18,13 +16,11 @@ const mountMasonryGrid = () => {
 
     return `
 <a tabindex='0'  id='${id}' class='macy-item overflow-hidden'>
-<img alt="${image}" class='object-cover group-hover:scale-110 w-full h-full '
+<img lazy alt="${image}" class='object-cover group-hover:scale-110 w-full h-full '
 src="https://raw.githubusercontent.com/simonkawaii/adrespect-design-site/main/src/assets/masonry/${props.image}"
-
 </a>
 `;
   };
-  initScrollTriggerAnimation(masonrySection, masonryExpandedContent);
   renderMasonryGrid(page);
 
   function renderMasonryGrid(page = 0) {
@@ -75,6 +71,7 @@ src="https://raw.githubusercontent.com/simonkawaii/adrespect-design-site/main/sr
 
       macyInstance.recalculate();
       macyInstance.reInit();
+      macyInstance.trueOrder = true;
     }
     if (!arr[page + 1]?.length) {
       masonryOverlay.style.display = "none";

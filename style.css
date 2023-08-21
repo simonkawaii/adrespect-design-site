@@ -178,7 +178,9 @@ div:hover > div > #card-link:hover span {
   transition: 200ms;
   cursor: pointer;
 }
-
+.square-img img {
+  transform-origin: bottom;
+}
 nav a::after {
   position: absolute;
   bottom: 0;
