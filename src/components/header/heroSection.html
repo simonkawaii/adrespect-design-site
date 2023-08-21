@@ -1,0 +1,74 @@
+<div
+  class="section flex flex-col gap-[2rem] md:gap-[4rem] px-small py-medium lg:px-large justify-start lg:justify-center h-full w-full"
+>
+  <div class="flex flex-col gap-[44px] w-full">
+    <h1 class="font-medium break-words flex">
+      Nowoczesna
+      <br />
+      aranżacja
+      <br />
+      Twojego ogrodu
+    </h1>
+    <h4 class="max-w-[500px]">
+      Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
+      realizacji. Oferujemy kompleksowy zakres usług z indywidualnym podejściem
+      do każdego projektu.
+    </h4>
+  </div>
+  <div
+    id="hero--buttons"
+    class="[&>*]:rounded-[99em] flex-wrap flex gap-[36px]"
+  >
+    <a
+      class="flex cursor-pointer gap-[8px] items-center duration-300 bg-primary text-white hover:bg-primary-hover rounded-full px-[24px] py-[12px] w-fit group"
+      >Skontaktuj się z nami</a
+    >
+    <a
+      href="#masonry__section"
+      class="hover:bg-primary hover:text-white border-sm text-primary hover:border-primary flex cursor-pointer gap-[8px] items-center duration-300 rounded-full px-[24px] py-[12px] w-fit group"
+    >
+      <span> Zobacz nasze realizacje </span>
+
+      <span class="material-symbols-rounded"> arrow_downward_alt </span>
+    </a>
+  </div>
+</div>
+<div class="overflow-hidden relative h-full w-full">
+  <div
+    class="absolute left-0 top-0 w-full h-full before:content-[''] before:absolute before:h-full before:w-full before:bg-white/10"
+  >
+    <div
+      id="swiper--navigation"
+      class="absolute bottom-0 [&>*]:p-7 flex [&>*]:duration-300 right-0 w-[full] h-[h-full] z-[999] bg-offwhite"
+    >
+      <button id="swiper--navigation--prev" class="hover:bg-secondary">
+        <span class="material-symbols-rounded"> arrow_back </span>
+      </button>
+      <button id="swiper--navigation--next" class="hover:bg-secondary">
+        <span class="material-symbols-rounded"> arrow_forward </span>
+      </button>
+    </div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            class="w-full h-full object-cover"
+            src="/herojpg.jpg"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            class="w-full h-full object-cover"
+            src="/herojpg.jpg"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>

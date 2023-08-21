@@ -1,0 +1,87 @@
+<section class="w-full px-small flex lg:px-large justify-between items-center">
+  <div id="header--logo" class="z-[9999]">
+    <a href="#">
+      <span class="brand__logo [&>*]:fill-black"> </span>
+    </a>
+  </div>
+  <div
+    id="mobile--ham__menu"
+    class="absolute grid visible lg:hidden lg:invisible grid-rows-[0fr] duration-300 max-h-[100svh] top-0 left-0 bg-white w-full h-fit"
+    aria-expanded="false"
+  >
+    <ul
+      id="mobileDropdownContainer"
+      class="flex flex-col overflow-auto duration-500 mt-[50px] [&>*]:py-4"
+    ></ul>
+  </div>
+  <nav class="relative h-full">
+    <div class="relative visible h-full flex lg:hidden lg:invisible">
+      <button
+        id="menu--mobile__button"
+        class="relative w-[25px] h-full flex items-center justify-center"
+      >
+        <span
+          class="relative rounded-full before:rounded-full after:rounded-full w-full h-[2px] bg-black before:absolute before:w-full before:h-[2px] before:bg-black before:content-[''] before:translate-y-[6px] before:left-0 before:top-0 after:absolute after:w-full after:h-[2px] after:bg-black after:content-[''] after:-translate-y-[6px] after:left-0 after:top-0"
+        >
+        </span>
+      </button>
+    </div>
+    <div id="menu--desktop" class="hidden lg:flex h-full items-center">
+      <ul
+        id="menu--content"
+        class="flex relative h-full [&>*]:h-full items-center [&>li>a]:p-2 [&>*]:items-center [&>*]:flex gap-header"
+      >
+        <li id="menuDropdownContainer" class="cursor-pointer relative">
+          <div class="items-center group/drop relative flex gap-[5px]">
+            <span> Oferta </span>
+            <span class="material-symbols-rounded"> expand_more </span>
+          </div>
+          <div
+            id="menu-dropdown"
+            tabindex="0"
+            class="absolute left-0 right-0 top-0 h-full w-full group/dropdown"
+          ></div>
+        </li>
+        <li>
+          <a href="#about--brand__section">O firmie</a>
+        </li>
+        <li><a href="#masonry__section">Realizacje</a></li>
+        <li>
+          <a href="">Kontakt</a>
+        </li>
+        <li>
+          <div class="relative group/search h-full flex items-center">
+            <input
+              class="blank search--input p-[12px] w-[40px] cursor-pointer focus-within:cursor-auto text-sm rounded-full duration-300 group-focus/search:w-[150px] group-focus-within/search:w-[150px]"
+              type="text"
+              name=""
+              id=""
+            />
+
+            <button
+              class="submit--search absolute left-2 pointer-events-none z-[9999]"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  id="Icon Color"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8 0.25C3.71979 0.25 0.25 3.71979 0.25 8C0.25 12.2802 3.71979 15.75 8 15.75C9.87001 15.75 11.5853 15.0877 12.9242 13.9848L18.4697 19.5303L18.5538 19.6029C18.8474 19.8208 19.2641 19.7966 19.5303 19.5303C19.8232 19.2374 19.8232 18.7626 19.5303 18.4697L13.9848 12.9242C15.0877 11.5853 15.75 9.87001 15.75 8C15.75 3.71979 12.2802 0.25 8 0.25ZM8 1.75C11.4518 1.75 14.25 4.54822 14.25 8C14.25 11.4518 11.4518 14.25 8 14.25C4.54822 14.25 1.75 11.4518 1.75 8C1.75 4.54822 4.54822 1.75 8 1.75Z"
+                  fill="#111111"
+                />
+              </svg>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</section>
+
+<script></script>

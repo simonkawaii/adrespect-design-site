@@ -1,0 +1,30 @@
+<div class="flex flex-col gap-[32px] px-4 sm:px-[89px]">
+  <span class="text-primary"> Realizacje</span>
+
+  <h2 class="font-medium text-6xl">
+    <span class="font-[montserrat] tracking-tight"> Nasze </span>
+    <span class="italic"> projekty</span>
+  </h2>
+</div>
+
+<div class="grid overflow-hidden w-full relative">
+  <div
+    id="masonry__overlay"
+    class="absolute duration-300 flex justify-center items-end bottom-0 left-0 right-0 bg-gradient-to-t from-secondary to-transparent w-full h-[50%] z-[999]"
+  >
+    <button
+      id="masonry__button--expand"
+      class="group py-[12px] px-[24px] hover:translate-y-2 m-[60px] hover:scale-125 duration-300 gap-2 flex items-center rounded-full border-[1px] border-black"
+    >
+      <span> Rozwiń </span>
+
+      <span class="group-hover:animate-bounceme material-symbols-rounded">
+        arrow_downward_alt
+      </span>
+    </button>
+  </div>
+  <div
+    id="masonry--grid__section"
+    class="flex flex-col overflow-hidden w-full h-full relative duration-200"
+  ></div>
+</div>
