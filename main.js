@@ -1,5 +1,5 @@
-import { mountComponents } from "./src/scripts/MountApp";
-import { mountGsapAnimations } from "./src/scripts/animations";
+import { mountComponents } from "./src/scripts/MountApp.js";
+import { mountGsapAnimations } from "./src/scripts/animations.js";
 
 let loading = true;
 

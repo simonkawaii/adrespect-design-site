@@ -1,4 +1,4 @@
-import { gallerySwiper } from "../../scripts/swiper";
+import { gallerySwiper } from "../../scripts/swiper.js";
 
 const mountMasonryGallery = (arr) => {
   const masonryExpandedContent = document.querySelector(

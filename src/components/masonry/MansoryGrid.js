@@ -1,6 +1,6 @@
 import mountMasonryGallery from "./ImageGallery.js";
 import { mountMasonryGrid } from "./CreateMasonryGrid.js";
-import arr from "./masonryGridData";
+import arr from "./masonryGridData.js";
 
 export const fetchMasonry = () => {
   fetch("./src/components/masonry/masonrySection.html")
