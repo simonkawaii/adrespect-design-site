@@ -1,8 +1,8 @@
-import { mountDesktopMenuDropdown } from "../components/header/MenuList";
-import { mountHeaderContent } from "../components/header/mountHeader";
-import { fetchMasonry } from "../components/masonry/MansoryGrid";
-import { mountLogos } from "./logo";
-import { mountHeroSwiper } from "./swiper";
+import { mountDesktopMenuDropdown } from "../components/header/MenuList.js";
+import { mountHeaderContent } from "../components/header/mountHeader.js";
+import { fetchMasonry } from "../components/masonry/MansoryGrid.js";
+import { mountLogos } from "./logo.js";
+import { mountHeroSwiper } from "./swiper.js";
 
 export const mountComponents = () => {
   return Promise.all([
