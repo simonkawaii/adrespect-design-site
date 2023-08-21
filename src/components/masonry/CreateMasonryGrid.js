@@ -1,4 +1,4 @@
-import arr from "./masonryGridData";
+import arr from "./masonryGridData.js";
 import { initScrollTriggerAnimation } from "../../scripts/animations.js";
 
 const mountMasonryGrid = () => {
