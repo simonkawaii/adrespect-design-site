@@ -5,7 +5,7 @@ fetch("./src/components/offer/offerSection.html")
   .then((content) => {
     document.querySelector("#offer__section").innerHTML = content;
   })
-  .then(() => {
+  .then(async () => {
     const cardContainer = document.querySelector("#card-container");
 
     const createCard = (props, node) => {
@@ -41,6 +41,7 @@ fetch("./src/components/offer/offerSection.html")
 
     const card = (props) => {
       const { title, description } = props;
+      if (!props) return;
 
       return `
     <div class="flex flex-col  justify-between gap-[32px] md:gap-0 ">
@@ -50,7 +51,10 @@ fetch("./src/components/offer/offerSection.html")
    
         h-[44px] w-[44px]'>
         
-        <img src="./src/assets/${props.image}.png" class="w-full h-full object-contain" alt=${props.image} />
+        <img 
+      src="https://raw.githubusercontent.com/simonkawaii/adrespect-design-site/main/src/assets/${props.image}.png"
+        
+        class="w-full h-full object-contain" alt=${props.image} />
         </div>`
         : ""
     }

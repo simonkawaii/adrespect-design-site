@@ -77,11 +77,15 @@ const mountMasonryGallery = (arr) => {
       : galleryNextButton.classList.remove("hidden");
   });
   const createImg = (props) => {
+    if (!props) return;
     return `
   <div class="swiper-slide w-full h-full m-auto cursor-grab z-[9999] active:cursor-grabbing">
     <img alt="${props.image}" class='object-contain
     aspect-[9 / 16]
-     w-full h-full ' src='./src/assets/masonry/${props.image}' />
+     w-full h-full ' 
+     src="https://raw.githubusercontent.com/simonkawaii/adrespect-design-site/main/src/assets/masonry/${props.image}"
+     
+     />
      </div> 
      `;
   };

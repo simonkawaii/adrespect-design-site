@@ -18,7 +18,9 @@ const mountMasonryGrid = () => {
 
     return `
 <a tabindex='0'  id='${id}' class='macy-item overflow-hidden'>
-<img alt="${image}" class='object-cover group-hover:scale-110 w-full h-full ' src='./src/assets/masonry/${props.image}' />
+<img alt="${image}" class='object-cover group-hover:scale-110 w-full h-full '
+src="https://raw.githubusercontent.com/simonkawaii/adrespect-design-site/main/src/assets/masonry/${props.image}"
+
 </a>
 `;
   };
