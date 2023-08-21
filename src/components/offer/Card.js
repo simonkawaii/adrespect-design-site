@@ -13,7 +13,7 @@ const createCard = (props, node) => {
   const paragraph = document.createElement("p");
   const span = document.createElement("span");
 
-  image.src = `../../assets/${props.image}.png`;
+  image.src = `./src/assets/${props.image}.png`;
 
   h3.innerText = title;
   paragraph.innerText = description;
@@ -43,7 +43,7 @@ const card = (props) => {
    
         h-[44px] w-[44px]'>
         
-        <img src="./${props.image}.png" class="w-full h-full object-contain" alt=${props.image} />
+        <img src="./src/assets/${props.image}.png" class="w-full h-full object-contain" alt=${props.image} />
         </div>`
         : ""
     }

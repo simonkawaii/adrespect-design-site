@@ -5,18 +5,15 @@ const galleryPrevButton = document.querySelector(".nav-prev");
 const galleryNextButton = document.querySelector(".nav-next");
 const galleryExitButton = document.querySelector(".exit-popup");
 const swiperPaginationContainer = document.querySelector(".current-img");
-
 const imageSwiperWrapper = document.querySelector(
   ".image--container .swiper-wrapper"
 );
-console.log(imageSwiperWrapper);
-
+const galleryArray = arr.flat();
 let currentImageId;
 
 import { gallerySwiper } from "../../scripts/swiper.js";
 import { arr } from "./MansoryGrid.js";
 const galleryContainer = document.querySelector("#gallery--popup");
-const imagePopup = document.querySelector(".image--container img");
 
 //initialize mutation observer instance and config
 const config = { childList: true, subtree: true };
@@ -24,7 +21,6 @@ const observer = new MutationObserver(callback);
 
 function togglePopup(node) {
   const currentAriaExpanded = node.getAttribute("aria-hidden");
-
   const imageContainers = document.querySelectorAll(".macy-item");
 
   imageContainers.forEach((e) => {
@@ -39,6 +35,7 @@ function togglePopup(node) {
     ? node.setAttribute("aria-hidden", "false")
     : node.setAttribute("aria-hidden", "true");
 }
+
 function closePopup(node) {
   const currentAriaExpanded = node.getAttribute("aria-hidden");
 
@@ -69,10 +66,6 @@ galleryExitButton.addEventListener("click", () => {
   closePopup(galleryContainer);
 });
 
-const galleryArray = arr.flat();
-gallerySwiper.on("reachEnd", function () {
-  console.log("reach to End");
-});
 gallerySwiper.on("slideChange", function () {
   gallerySwiper.isBeginning
     ? galleryPrevButton.classList.add("hidden")
@@ -87,7 +80,7 @@ const createImg = (props) => {
   <div class="swiper-slide w-full h-full m-auto cursor-grab z-[9999] active:cursor-grabbing">
     <img alt="${props.image}" class='object-contain
     aspect-[9 / 16]
-     w-full h-full ' src='/masonry/${props.image}' />
+     w-full h-full ' src='./src/assets/masonry/${props.image}' />
      </div> 
      `;
 };
@@ -118,11 +111,9 @@ galleryContainer.addEventListener("click", (e) => {
   if (e.target === overlay) {
     closePopup(galleryContainer);
   }
-  //   console.log(e.target);
 });
 
 function callback() {
-  console.log("node mutated");
   mountEventListeners();
 }
 
