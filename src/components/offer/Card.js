@@ -1,41 +1,48 @@
 import cardsContent from "./cardsContent.js";
-const cardContainer = document.querySelector("#card-container");
 
-const createCard = (props, node) => {
-  const { title, description } = props;
+fetch("./src/components/offer/offerSection.html")
+  .then((response) => response.text())
+  .then((content) => {
+    document.querySelector("#offer__section").innerHTML = content;
+  })
+  .then(() => {
+    const cardContainer = document.querySelector("#card-container");
 
-  const div = document.createElement("div");
-  const textContainer = document.createElement("div");
-  const imageContainer = document.createElement("div");
-  const image = document.createElement("img");
-  const h3 = document.createElement("h3");
-  const link = document.createElement("a");
-  const paragraph = document.createElement("p");
-  const span = document.createElement("span");
+    const createCard = (props, node) => {
+      const { title, description } = props;
 
-  image.src = `./src/assets/${props.image}.png`;
+      const div = document.createElement("div");
+      const textContainer = document.createElement("div");
+      const imageContainer = document.createElement("div");
+      const image = document.createElement("img");
+      const h3 = document.createElement("h3");
+      const link = document.createElement("a");
+      const paragraph = document.createElement("p");
+      const span = document.createElement("span");
 
-  h3.innerText = title;
-  paragraph.innerText = description;
-  link.innerText = "dowiedz sie wiecej";
+      image.src = `./src/assets/${props.image}.png`;
 
-  node.appendChild(div);
-  div.appendChild(imageContainer);
-  imageContainer.appendChild(image);
-  div.appendChild(textContainer);
-  span.innerText = "arrow_forward";
+      h3.innerText = title;
+      paragraph.innerText = description;
+      link.innerText = "dowiedz sie wiecej";
 
-  textContainer.appendChild(h3);
-  textContainer.appendChild(paragraph);
+      node.appendChild(div);
+      div.appendChild(imageContainer);
+      imageContainer.appendChild(image);
+      div.appendChild(textContainer);
+      span.innerText = "arrow_forward";
 
-  div.appendChild(link);
-  link.appendChild(span);
-};
+      textContainer.appendChild(h3);
+      textContainer.appendChild(paragraph);
 
-const card = (props) => {
-  const { title, description } = props;
+      div.appendChild(link);
+      link.appendChild(span);
+    };
 
-  return `
+    const card = (props) => {
+      const { title, description } = props;
+
+      return `
     <div class="flex flex-col  justify-between gap-[32px] md:gap-0 ">
     ${
       props.image
@@ -59,33 +66,30 @@ const card = (props) => {
     </a>
     </div>
        `;
-};
+    };
+    const renderCardsComponent = () => {
+      const div = document.createElement("div");
 
-const renderCards = cardsContent.map((item, index) => {
-  const cardHTML = card(item);
+      cardContainer.appendChild(div);
 
-  return `
+      cardsContent.forEach((e) => {
+        createCard(e, div);
+      });
+    };
+    const renderCards = cardsContent.map((item, index) => {
+      const cardHTML = card(item);
+
+      return `
   <div class="flex w-full group  duration-300 flex-1 h-[380px] p-[40px] bg-white rounded-[28px]">
   ${cardHTML}
   </div>
      `;
-});
+    });
 
-const renderCardsComponent = () => {
-  const div = document.createElement("div");
-
-  cardContainer.appendChild(div);
-
-  cardsContent.forEach((e) => {
-    createCard(e, div);
+    const renderContent = () => {
+      for (let item of renderCards) {
+        cardContainer.innerHTML += item;
+      }
+    };
+    renderContent();
   });
-};
-
-const renderContent = () => {
-  for (let item of renderCards) {
-    cardContainer.innerHTML += item;
-  }
-};
-renderContent();
-
-export default renderContent;

@@ -1,33 +1,34 @@
 import menuDropdownArray from "./menuDropdownData.js";
 
-const mobileHamburgerMenu = document.querySelector("#mobile--ham__menu ul");
-const menuDropdown = document.querySelector("#menu-dropdown");
+export const mountDesktopMenuDropdown = () => {
+  const mobileHamburgerMenu = document.querySelector("#mobile--ham__menu ul");
+  const menuDropdown = document.querySelector("#menu-dropdown");
 
-menuDropdown.innerHTML = `
+  menuDropdown.innerHTML = `
   <ul
   class="absolute group/drop group-hover/dropdown:grid animate-wiggle origin-top top-[100%] [&>li>a]:px-small [&>li>a]:py-2 [&>li>a]:block min-w-[200px] bg-white left-[-50px] duration-300 hidden" id='menuDropdown-wrapper'></ul>
   `;
 
-const menuDropdownContainer = document.querySelector("#menuDropdown-wrapper");
+  const menuDropdownContainer = document.querySelector("#menuDropdown-wrapper");
 
-const renderSubmenu = (submenuItems) => {
-  if (!submenuItems) return;
+  const renderSubmenu = (submenuItems) => {
+    if (!submenuItems) return;
 
-  return submenuItems
-    .map((item, index) => {
-      return `
+    return submenuItems
+      .map((item, index) => {
+        return `
         <li key=${index} class=' w-full relative '>
           <a class='block w-full' href="#">${item}</a>
         </li>
       `;
-    })
-    .join("");
-};
+      })
+      .join("");
+  };
 
-const renderList = menuDropdownArray.map(({ title, submenu, id }, index) => {
-  const submenuHTML = renderSubmenu(submenu);
+  const renderList = menuDropdownArray.map(({ title, submenu, id }, index) => {
+    const submenuHTML = renderSubmenu(submenu);
 
-  return `
+    return `
       <li  key=${id} class="group p-small top-0 relative">
         <a >${title}</a>
         ${
@@ -39,13 +40,13 @@ const renderList = menuDropdownArray.map(({ title, submenu, id }, index) => {
         }
       </li>
     `;
-});
+  });
 
-const renderDropdownList = (node) => {
-  for (let item of renderList) {
-    node.innerHTML += item;
-  }
+  const renderDropdownList = (node) => {
+    for (let item of renderList) {
+      node.innerHTML += item;
+    }
+  };
+
+  renderDropdownList(menuDropdownContainer);
 };
-
-renderDropdownList(menuDropdownContainer);
-export default renderDropdownList;

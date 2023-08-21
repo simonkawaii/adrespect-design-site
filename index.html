@@ -169,54 +169,23 @@
         </div>
       </div>
     </section>
-    <script>
-      fetch("./src/components/footer/footer.html")
-        .then((response) => response.text())
-        .then((content) => {
-          document.querySelector("footer").innerHTML = content;
-        });
-      fetch("./src/components/masonry/masonrySection.html")
-        .then((response) => response.text())
-        .then((content) => {
-          document.querySelector("#masonry__section").innerHTML = content;
-        });
-      fetch("./src/components/newsletter/newsletter.html")
-        .then((response) => response.text())
-        .then((content) => {
-          document.querySelector("#newsletter").innerHTML = content;
-        });
-      fetch("./src/components/about/aboutBrandSection.html")
-        .then((response) => response.text())
-        .then((content) => {
-          document.querySelector("#about--brand__section").innerHTML = content;
-        });
-      fetch("./src/components/offer/offerSection.html")
-        .then((response) => response.text())
-        .then((content) => {
-          document.querySelector("#offer__section").innerHTML = content;
-        });
-
-      fetch("./src/components/header/header.html")
-        .then((response) => response.text())
-        .then((content) => {
-          document.querySelector("#header").innerHTML = content;
-        });
-      fetch("./src/components/header/menu.html")
-        .then((response) => response.text())
-        .then((content) => {
-          document.querySelector("#mobileDropdownContainer").innerHTML =
-            content;
-        });
-      fetch("./src/components/header/heroSection.html")
-        .then((response) => response.text())
-        .then((content) => {
-          document.querySelector("#hero--section").innerHTML = content;
-        });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <div
+      id="page--loader"
+      class="h-screen w-screen z-[9999] max-w-[100%] fixed bg-white top-0 left-0"
+    >
+      <div
+        class="building-blocks w-screen h-screen flex justify-center items-center"
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script></script>
 
     <script type="module" src="./src/components/offer/Card.js"></script>
     <script type="module" src="./src/components/header/MenuList.js"></script>
@@ -228,6 +197,11 @@
       type="module"
       src="./src/components/masonry/ImageGallery.js"
     ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script type="module" src="./main.js" defer></script>
 
     <script type="module" src="./src/scripts/swiper.js" defer></script>

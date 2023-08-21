@@ -1,8 +1,9 @@
-const brandLogo = document.querySelectorAll(".brand__logo");
-const providerBrand = document.querySelectorAll(".provider__brand");
+export const mountLogos = () => {
+  const brandLogo = document.querySelectorAll(".brand__logo");
+  const providerBrand = document.querySelectorAll(".provider__brand");
 
-const brandLogoImage = () => {
-  return `
+  const brandLogoImage = () => {
+    return `
 <svg
 width="115"
 height="20"
@@ -57,8 +58,8 @@ xmlns="http://www.w3.org/2000/svg"
 </g>
 </svg>
 `;
-};
-const providerBrandImage = () => `
+  };
+  const providerBrandImage = () => `
 <svg
 width="113"
 height="24"
@@ -132,15 +133,16 @@ xmlns="http://www.w3.org/2000/svg"
 />
 </svg>`;
 
-const renderBrandLogo = () => {
-  brandLogo.forEach((e) => {
-    e.innerHTML = brandLogoImage();
-  });
+  const renderBrandLogo = () => {
+    brandLogo.forEach((e) => {
+      e.innerHTML = brandLogoImage();
+    });
+  };
+  const renderProviderLogo = () => {
+    providerBrand.forEach((e) => {
+      e.innerHTML = providerBrandImage();
+    });
+  };
+  renderProviderLogo();
+  renderBrandLogo();
 };
-const renderProviderLogo = () => {
-  providerBrand.forEach((e) => {
-    e.innerHTML = providerBrandImage();
-  });
-};
-
-export { renderBrandLogo, renderProviderLogo };

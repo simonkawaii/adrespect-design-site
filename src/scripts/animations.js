@@ -1,25 +1,27 @@
-const sections = document.querySelectorAll(".section");
+const mountGsapAnimations = () => {
+  const sections = document.querySelectorAll(".section");
 
-sections.forEach((section) => {
-  gsap.fromTo(
-    section.children,
-    {
-      y: "+=50",
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-
-      duration: 0.7,
-      ease: "easeInOut",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 50%",
+  sections.forEach((section) => {
+    gsap.fromTo(
+      section.children,
+      {
+        y: "+=50",
+        opacity: 0,
       },
-    }
-  );
-});
+      {
+        y: 0,
+        opacity: 1,
+
+        duration: 0.7,
+        ease: "easeInOut",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 50%",
+        },
+      }
+    );
+  });
+};
 
 function initScrollTriggerAnimation(element, affectElement) {
   TweenMax.fromTo(
@@ -41,4 +43,4 @@ function initScrollTriggerAnimation(element, affectElement) {
   );
 }
 
-export default initScrollTriggerAnimation;
+export { initScrollTriggerAnimation, mountGsapAnimations };
