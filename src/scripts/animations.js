@@ -71,6 +71,7 @@ const mountGsapAnimations = async () => {
 
   animateEachChild({
     node: footerSection,
+    container: footerSection,
     modifier: 0.2,
     duration: 1,
     position: `top`,
@@ -81,7 +82,7 @@ const mountGsapAnimations = async () => {
     container: cardContainer,
     duration: 0.1,
     modifier: 0.15,
-    position: "top 100%",
+    position: "top 70%",
   });
 };
 
