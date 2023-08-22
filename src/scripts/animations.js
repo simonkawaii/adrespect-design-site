@@ -61,19 +61,21 @@ const animateAll = (nodeContainer, animationFunc) => {
 
 const mountGsapAnimations = async () => {
   const textSections = document.querySelectorAll(".g-text-section");
-  const footerSections = document.querySelectorAll(".g-footer-section");
+  const footerSection = document.querySelectorAll(".g-footer-section");
   const cardSection = document.querySelectorAll(".cards-section");
   const cardContainer = document.querySelector("#card-container");
   const images = document.querySelectorAll(".square-img img");
 
   animateAll(images, animateImg);
   animateEachChild({ node: textSections });
+
   animateEachChild({
-    node: footerSections,
+    node: footerSection,
     modifier: 0.2,
     duration: 1,
-    position: "top 50%",
+    position: `top`,
   });
+
   animateEachChild({
     node: cardSection,
     container: cardContainer,
