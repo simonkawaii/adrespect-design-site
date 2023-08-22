@@ -407,3 +407,25 @@ h3 {
   /* max-height: 50vh !important; */
   max-height: 50vh !important;
 }
+#mobile--ham__menu[aria-expanded="true"]
+  + nav
+  div
+  #menu--mobile__button
+  span::before {
+  transform: translateY(0);
+}
+#mobile--ham__menu[aria-expanded="true"]
+  + nav
+  div
+  #menu--mobile__button
+  span::after {
+  transform: translateY(0) rotate(90deg);
+}
+#mobile--ham__menu[aria-expanded="true"] + nav div #menu--mobile__button span {
+  transform: rotate(45deg);
+}
+#menu--mobile__button span,
+#menu--mobile__button span::before,
+#menu--mobile__button span::after {
+  transition: 300ms ease-in-out !important;
+}
