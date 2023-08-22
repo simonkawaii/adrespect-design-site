@@ -39,12 +39,9 @@ input.search--input:not(.blank) + button.submit--search {
   visibility: hidden;
   display: none;
 }
-#gallery--popup > div {
-}
+
 #gallery--popup .overlay {
   animation: fadeIn 0.3s ease-in-out both;
-}
-#gallery--popup[aria-hidden="false"] #image--popup {
 }
 
 #gallery--popup[aria-hidden="false"] {
@@ -391,4 +388,22 @@ h3 {
 .building-blocks div:nth-child(7):after {
   -webkit-animation-delay: 1.05s;
   animation-delay: 1.05s;
+}
+
+/* @media (min-width: 768px) {
+  #image--popup,
+  .gallerySwiper .swiper-wrapper * {
+    max-height: 50vh !important;
+  }
+} */
+@media screen and (max-height: 1080px) and (max-width: 540px) {
+  #image--popup,
+  .gallerySwiper .swiper-wrapper * {
+    height: 100% !important;
+  }
+}
+#image--popup,
+.gallerySwiper .swiper-wrapper * {
+  /* max-height: 50vh !important; */
+  max-height: 50vh !important;
 }
